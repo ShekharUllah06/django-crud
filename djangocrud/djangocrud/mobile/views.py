@@ -18,15 +18,15 @@ def show(request):
     mobiles = Phone.objects.all()  
     return render(request,"show.html",{'mobiles':mobiles})  
 def edit(request, id):  
-    employee = Phone.objects.get(id=id)  
-    return render(request,'edit.html', {'employee':employee})  
+    mobile = Phone.objects.get(id=id)  
+    return render(request,'edit.html', {'employee':mobile})  
 def update(request, id):  
-    employee = Phone.objects.get(id=id)  
-    form = MobileForm(request.POST, instance = employee)  
+    mobile = Phone.objects.get(id=id)  
+    form = MobileForm(request.POST, instance = mobile)  
     if form.is_valid():  
         form.save()  
         return redirect("/show")  
-    return render(request, 'edit.html', {'employee': employee})  
+    return render(request, 'edit.html', {'employee': mobile})  
 def destroy(request, id):  
     employee = Phone.objects.get(id=id)  
     employee.delete()  
