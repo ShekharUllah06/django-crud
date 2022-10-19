@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect  
 from mobile.forms import MobileForm  
 from mobile.models import Phone  
- 
+# Create your views here.  
 def phone(request):  
     if request.method == "POST":  
         form = MobileForm(request.POST)  
@@ -15,19 +15,19 @@ def phone(request):
         form = MobileForm()  
     return render(request,'index.html',{'form':form})  
 def show(request):  
-    mobiles = Phone.objects.all()  
-    return render(request,"show.html",{'mobiles':mobiles})  
+    phones = Phone.objects.all()  
+    return render(request,"show.html",{'phones':phones})  
 def edit(request, id):  
-    mobile = Phone.objects.get(id=id)  
-    return render(request,'edit.html', {'employee':mobile})  
+    phone = Phone.objects.get(id=id)  
+    return render(request,'edit.html', {'phone':phone})  
 def update(request, id):  
-    mobile = Phone.objects.get(id=id)  
-    form = MobileForm(request.POST, instance = mobile)  
+    phone = Phone.objects.get(id=id)  
+    form = MobileForm(request.POST, instance = phone)  
     if form.is_valid():  
         form.save()  
         return redirect("/show")  
-    return render(request, 'edit.html', {'employee': mobile})  
+    return render(request, 'edit.html', {'phone': phone})  
 def destroy(request, id):  
-    employee = Phone.objects.get(id=id)  
-    employee.delete()  
+    phone = Phone.objects.get(id=id)  
+    phone.delete()  
     return redirect("/show")  
