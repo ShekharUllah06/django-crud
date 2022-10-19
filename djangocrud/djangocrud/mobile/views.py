@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect  
 from mobile.forms import MobileForm  
 from mobile.models import Phone  
-# Create your views here.  
+ 
 def phone(request):  
     if request.method == "POST":  
         form = MobileForm(request.POST)  
