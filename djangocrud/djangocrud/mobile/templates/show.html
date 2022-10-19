@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mobile Records</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <center><a href="/phone" class="button button1">Add New Record</a></center>
+    
+    <br>
+    <table>
+      <tr>
+        <th>Phone Name</th>
+        <th>Model</th>
+        <th>Make</th>
+        <th></th>
+        <th></th>
+      </tr>
+      <tbody>
+        {% for mobile in phones %}
+        <tr>
+          <td>{{ mobile.phone_name }}</td>
+          <td>{{ mobile.phone_model }}</td>
+          <td>{{ mobile.make }}</td>
+          <td>
+            <a href="/edit/{{ mobile.id }}"
+              ><span>Edit</span></a
+            >
+          </td>
+          <td>
+            <a href="/delete/{{ mobile.id }}">Delete</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <br />
+    <br />
+    
+  </body>
+</html>
