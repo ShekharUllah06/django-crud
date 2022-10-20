@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Index</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <form method="POST" class="post-form" action="/update/{{phone.id}}">
+      {% csrf_token %}
+      <div>
+        <br />
+        <div>
+          <label></label>
+          <div>
+            <h3>Update Details</h3>
+          </div>
+        </div>
+        <div>
+          <label>Phone Name:</label>
+          <div>
+            <input
+              type="text"
+              name="phone_name"
+              id="id_phone_name"
+              required
+              maxlength="20"
+              value="{{  phone.phone_name }}"
+            />
+          </div>
+        </div>
+        <div>
+          <label>Model:</label>
+          <div>
+            <input
+              type="text"
+              name="phone_model"
+              id="id_phone_model"
+              required
+              maxlength="100"
+              value="{{ phone.phone_model }}"
+            />
+          </div>
+        </div>
+        <div>
+          <label>Make:</label>
+          <div>
+            <input
+              type="number"
+              name="make"
+              id="id_make"
+              required
+              maxlength="254"
+              value="{{ phone.make }}"
+            />
+          </div>
+        </div>
+
+        <div>
+          <div>
+            <button type="submit" class="button button1">Update</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
