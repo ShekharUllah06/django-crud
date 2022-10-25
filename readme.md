@@ -4,3 +4,9 @@
     <img alt="Django CRUD" src="res/Cover.jpg">
   </a>
 </p>
+<p align="center">
+  This project is developed for tutorial purpose.</br>
+  Developed by  <a href="https://www.linkedin.com/in/mia-abdullah-shekhar-3baa8826/">Mia Abdullah Shekhar</a>.
+<br>
+You will find the tutorial at <a href="https://medium.com/@shekharabdullah/django-crud-21b6e34ae904">here</a>
+</p>
