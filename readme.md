@@ -4,7 +4,7 @@
     <img alt="Django CRUD" src="res/Cover.jpg">
   </a>
 </p>
-<p align="center">
+<p>
   This project is developed for tutorial purpose.</br>
   Developed by  <a href="https://www.linkedin.com/in/mia-abdullah-shekhar-3baa8826/">Mia Abdullah Shekhar</a>.
 <br>
